@@ -1,4 +1,4 @@
-public class variables {
+public class Variables {
     public static void main(String[] args) {
         byte age = 25;
         short yearOfBirth = 1998;

@@ -348,3 +348,166 @@ for (int i = 1; i <= 5; i++) {
 | `continue` | Skip current loop iteration          |
 
 ---
+
+---
+
+## 🔧 **Functions and Methods in Java**
+
+In Java, **all functions are defined inside classes** and are called **methods**.
+
+---
+
+## 📘 1. **What is a Method?**
+
+A **method** is a block of code that performs a specific task and can be **reused**.
+
+### ✅ General Syntax:
+
+```java
+returnType methodName(parameter1, parameter2, ...) {
+    // method body
+    return value;
+}
+```
+
+---
+
+## 🧪 2. **Basic Method Example**
+
+```java
+public class MyClass {
+    // Method definition
+    static void sayHello() {
+        System.out.println("Hello, Java!");
+    }
+
+    public static void main(String[] args) {
+        // Method call
+        sayHello();
+    }
+}
+```
+
+### ✅ Output:
+
+```
+Hello, Java!
+```
+
+---
+
+## 🎯 3. **Method with Parameters**
+
+```java
+public class Calculator {
+    static void add(int a, int b) {
+        int result = a + b;
+        System.out.println("Sum: " + result);
+    }
+
+    public static void main(String[] args) {
+        add(10, 20); // calling method
+    }
+}
+```
+
+---
+
+## 🔁 4. **Method with Return Value**
+
+```java
+public class MathUtil {
+    static int square(int x) {
+        return x * x;
+    }
+
+    public static void main(String[] args) {
+        int result = square(5);
+        System.out.println("Square: " + result);
+    }
+}
+```
+
+---
+
+## ♻️ 5. **Types of Methods**
+
+| Type              | Description                                 |
+| ----------------- | ------------------------------------------- |
+| **Static**        | Belongs to the class, called without object |
+| **Non-static**    | Needs object to be called                   |
+| **Parameterized** | Takes input                                 |
+| **Return-type**   | Returns a result                            |
+
+---
+
+### ✅ Static vs Non-static Example:
+
+```java
+public class Demo {
+
+    // Static method
+    static void greet() {
+        System.out.println("Welcome!");
+    }
+
+    // Non-static method
+    void showName(String name) {
+        System.out.println("Name: " + name);
+    }
+
+    public static void main(String[] args) {
+        greet(); // static method call
+
+        Demo obj = new Demo(); // object creation
+        obj.showName("Alice"); // non-static method call
+    }
+}
+```
+
+---
+
+## 🧱 6. **Method Overloading**
+
+Same method name, different parameters.
+
+```java
+public class Overload {
+    static void print(String text) {
+        System.out.println("Text: " + text);
+    }
+
+    static void print(int number) {
+        System.out.println("Number: " + number);
+    }
+
+    public static void main(String[] args) {
+        print("Java");
+        print(100);
+    }
+}
+```
+
+---
+
+## 🧠 Best Practices
+
+* Method names should be **verbs** (e.g., `calculateSum`, `displayResult`)
+* Keep methods **short and focused** on one task
+* Use **camelCase** for method names
+
+---
+
+## ✅ Summary Table
+
+| Concept         | Example                         |
+| --------------- | ------------------------------- |
+| Basic method    | `void greet()`                  |
+| With parameters | `void add(int a, int b)`        |
+| With return     | `int square(int x)`             |
+| Static          | Called with class               |
+| Non-static      | Called with object              |
+| Overloading     | Same name, different parameters |
+
+---
+

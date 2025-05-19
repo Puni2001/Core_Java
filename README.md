@@ -511,3 +511,434 @@ public class Overload {
 
 ---
 
+
+## ✅ Core OOP Principles
+
+There are **four main pillars** of OOP:
+
+---
+
+### 1. **Encapsulation**
+
+**Definition**:
+Encapsulation is the concept of **wrapping data and methods** that operate on the data within one unit (class), and **restricting access** to some components using access modifiers (`private`, `public`, etc.).
+
+**Example** (in Java-like syntax):
+
+```java
+class BankAccount {
+    private double balance;
+
+    public void deposit(double amount) {
+        if(amount > 0) balance += amount;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+```
+
+**Follow-up Questions**:
+
+* Why should variables be private?
+* How does encapsulation help in real projects?
+* Can you implement encapsulation in Python?
+
+---
+
+### 2. **Abstraction**
+
+**Definition**:
+Abstraction means **hiding complex implementation details** and showing only the **essential features** of the object.
+
+**Example**:
+
+```java
+abstract class Animal {
+    abstract void makeSound();
+}
+
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Bark");
+    }
+}
+```
+
+**Follow-up Questions**:
+
+* Difference between abstraction and encapsulation?
+* How is abstraction achieved in Java/C#/Python?
+* Interface vs Abstract Class?
+
+---
+
+### 3. **Inheritance**
+
+**Definition**:
+Inheritance is the mechanism where a new class (child) **inherits properties and behavior** from an existing class (parent).
+
+**Example**:
+
+```java
+class Vehicle {
+    void start() {
+        System.out.println("Vehicle starting");
+    }
+}
+
+class Car extends Vehicle {
+    void start() {
+        System.out.println("Car starting");
+    }
+}
+```
+
+**Follow-up Questions**:
+
+* What types of inheritance exist (single, multiple, multilevel)?
+* Can a child override a method?
+* How do constructors behave during inheritance?
+
+---
+
+### 4. **Polymorphism**
+
+**Definition**:
+Polymorphism allows **one interface to be used for different data types or methods**. It can be:
+
+* **Compile-time (method overloading)**
+* **Runtime (method overriding)**
+
+**Example**:
+
+```java
+class Shape {
+    void draw() {
+        System.out.println("Drawing shape");
+    }
+}
+
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing circle");
+    }
+}
+```
+
+**Follow-up Questions**:
+
+* Difference between overloading and overriding?
+* Can constructors be overloaded?
+* What is dynamic binding?
+
+---
+
+## 🎯 Quick Interview-Ready Summary:
+
+> "OOP stands for Object-Oriented Programming, which organizes code using real-world objects. Its four main principles are **Encapsulation** (data hiding), **Abstraction** (hiding complexity), **Inheritance** (reusing code), and **Polymorphism** (method flexibility). These help write **modular, maintainable, and reusable** code."
+
+---
+
+Great! Here's a **complete and interview-focused guide to Object-Oriented Programming (OOP) in Java**, covering **all core concepts** with **examples and answers to common follow-up questions**.
+
+---
+
+## ✅ 1. **Encapsulation**
+
+### 🔹 Definition:
+
+Encapsulation is the process of **hiding internal details** of how an object works and **exposing only what’s necessary** via public methods.
+
+### 🔹 Example in Java:
+
+```java
+class Employee {
+    private String name;
+    private double salary;
+
+    // Constructor
+    public Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    // Getter
+    public String getName() {
+        return name;
+    }
+
+    // Setter
+    public void setSalary(double salary) {
+        if (salary > 0) {
+            this.salary = salary;
+        }
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+}
+```
+
+### 🔹 Follow-up Q\&A:
+
+**Q: Why use private variables?**
+A: To prevent direct modification of fields, which may break logic or security.
+
+**Q: How does it improve code?**
+A: It improves **modularity**, **security**, and **maintenance**. Only controlled access is allowed via getters/setters.
+
+**Q: Can you make a class immutable using encapsulation?**
+A: Yes, by declaring all fields `private`, not providing setters, and using `final` fields.
+
+---
+
+## ✅ 2. **Abstraction**
+
+### 🔹 Definition:
+
+Abstraction means hiding **implementation details** and showing only the **functionality**.
+
+### 🔹 Achieved in Java by:
+
+* **Abstract classes**
+* **Interfaces**
+
+### 🔹 Example using Abstract Class:
+
+```java
+abstract class Animal {
+    abstract void sound(); // abstract method
+
+    void sleep() {
+        System.out.println("Sleeping...");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Bark");
+    }
+}
+```
+
+### 🔹 Follow-up Q\&A:
+
+**Q: Difference between abstraction and encapsulation?**
+A: Abstraction hides *implementation*, while encapsulation hides *data*.
+
+**Q: Abstract class vs Interface?**
+A:
+
+* Abstract class can have both abstract and non-abstract methods.
+* Interface (Java 8+) can have default/static methods, but mostly used to define contracts.
+
+**Q: Can a class implement multiple interfaces?**
+A: Yes, Java supports multiple inheritance via interfaces.
+
+---
+
+## ✅ 3. **Inheritance**
+
+### 🔹 Definition:
+
+Inheritance allows a class to **acquire properties and methods** from another class using `extends`.
+
+### 🔹 Example:
+
+```java
+class Vehicle {
+    void run() {
+        System.out.println("Vehicle is running");
+    }
+}
+
+class Bike extends Vehicle {
+    void run() {
+        System.out.println("Bike is running fast");
+    }
+}
+```
+
+### 🔹 Follow-up Q\&A:
+
+**Q: Types of inheritance in Java?**
+A:
+
+* Single
+* Multilevel
+* Hierarchical
+  *(Note: Java does **not** support multiple inheritance with classes to avoid ambiguity, but interfaces allow it.)*
+
+**Q: Can child override parent method?**
+A: Yes, using **method overriding** with the same signature.
+
+**Q: What if you call parent method using child object?**
+A: The **overridden** version in the child class runs (**runtime polymorphism**).
+
+---
+
+## ✅ 4. **Polymorphism**
+
+### 🔹 Definition:
+
+Polymorphism means “**many forms**.” It lets one interface be used for different implementations.
+
+### 🔹 Types:
+
+* **Compile-time Polymorphism (Method Overloading)**
+* **Runtime Polymorphism (Method Overriding)**
+
+### 🔹 Method Overloading:
+
+```java
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+```
+
+### 🔹 Method Overriding:
+
+```java
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Cat extends Animal {
+    void sound() {
+        System.out.println("Meow");
+    }
+}
+```
+
+### 🔹 Follow-up Q\&A:
+
+**Q: What is method overloading?**
+A: Defining multiple methods with the same name but different parameters in the same class.
+
+**Q: What is method overriding?**
+A: Redefining a superclass method in the subclass with the same signature.
+
+**Q: Is overriding runtime or compile-time?**
+A: Runtime polymorphism.
+
+**Q: Can constructors be overloaded? Overridden?**
+A: Yes, **overloaded**, but **not overridden** (constructors are not inherited).
+
+---
+
+## ✅ BONUS: Other OOP Concepts in Java
+
+---
+
+### ✅ 5. **Constructor Overloading**
+
+```java
+class Person {
+    String name;
+    int age;
+
+    Person(String name) {
+        this.name = name;
+    }
+
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+```
+
+---
+
+### ✅ 6. **‘this’ Keyword**
+
+```java
+class Student {
+    String name;
+
+    Student(String name) {
+        this.name = name; // refers to the instance variable
+    }
+}
+```
+
+---
+
+### ✅ 7. **‘super’ Keyword**
+
+```java
+class Parent {
+    void greet() {
+        System.out.println("Hello from Parent");
+    }
+}
+
+class Child extends Parent {
+    void greet() {
+        super.greet(); // calls parent method
+        System.out.println("Hello from Child");
+    }
+}
+```
+
+---
+
+### ✅ 8. **Final Keyword**
+
+* `final` variable – cannot be reassigned.
+* `final` method – cannot be overridden.
+* `final` class – cannot be inherited.
+
+```java
+final class Constants {
+    final double PI = 3.14;
+}
+```
+
+---
+
+### ✅ 9. **Interface Example**
+
+```java
+interface Printable {
+    void print();
+}
+
+class Document implements Printable {
+    public void print() {
+        System.out.println("Printing document...");
+    }
+}
+```
+
+---
+
+### ✅ 10. **Abstract vs Interface Summary Table**
+
+| Feature              | Abstract Class      | Interface                    |
+| -------------------- | ------------------- | ---------------------------- |
+| Methods              | Abstract + Concrete | Only abstract (until Java 8) |
+| Multiple Inheritance | No                  | Yes                          |
+| Access Modifiers     | Any                 | Public only                  |
+| Constructors         | Yes                 | No                           |
+
+---
+
+## 🎤 Final Tip for Interviews:
+
+You can say:
+
+> "OOP allows me to write scalable, reusable, and modular code. I use encapsulation to protect data, abstraction to hide complexity, inheritance to promote reuse, and polymorphism for flexibility."
+
+---

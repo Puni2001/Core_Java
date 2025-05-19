@@ -22,7 +22,7 @@ class BankAccount{
 
 // Abstraction is hiding the implementation details and showing only the necessary information 
 abstract  class Animal{
-    abstract  void   makeSound();
+    abstract  void  makeSound();
 }
 
 class  Dog extends  Animal{

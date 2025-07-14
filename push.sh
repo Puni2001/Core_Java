@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Change to your Core Java folder
-cd "/c/Users/Admin/Desktop/Core Java/Core Java" || exit
 
 # Stage all changes
 git add .

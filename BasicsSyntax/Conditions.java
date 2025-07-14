@@ -1,3 +1,5 @@
+package BasicsSyntax;
+
 import java.util.*;
 
 public class Conditions {

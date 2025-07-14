@@ -58,7 +58,7 @@ Hello, World!
 
 ---
 
-## 🧾 4. **Java Syntax, Variables, Data Types**
+## 🧾 4. **Java Syntax, BasicsSyntax.Variables, Data Types**
 
 ### ✅ Variable Declaration:
 

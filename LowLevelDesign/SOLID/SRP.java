@@ -1,20 +1,20 @@
 package LowLevelDesign.SOLID;
 
 /*
-✅ S — Single Responsibility Principle (SRP)
+ S — Single Responsibility Principle (SRP)
 
-🔸 What is SRP?
+ What is SRP?
 A class should have only one reason to change.
 
 In other words: One class = One job
 If a class does more than one thing (e.g., both data saving and business logic), it's violating SRP.
 
-        ✅ Real-Life Analogy:
+         Real-Life Analogy:
 Imagine a Journal app:
 
-It lets you write and manage entries ✅
+It lets you write and manage entries 
 
-But also saves them to disk ❌
+But also saves them to disk
 
 That’s 2 responsibilities in 1 class — a violation of SRP.
 */

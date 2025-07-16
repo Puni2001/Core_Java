@@ -1,13 +1,13 @@
 package LowLevelDesign.SOLID;
 /*
 
-✅ O — Open/Closed Principle (OCP)
-🔸 What is OCP?
+ O — Open/Closed Principle (OCP)
+ What is OCP?
 Software entities (classes, modules, functions) should be open for extension, but closed for modification.
 
-🔁 You should be able to add new behavior without changing existing code.
+ You should be able to add new behavior without changing existing code.
 
-✅ Real-Life Analogy:
+ Real-Life Analogy:
 Imagine a payment system. Initially, it supports credit cards.
 Tomorrow you need to support UPI, then PayPal.
 You shouldn’t modify existing classes every time.
@@ -66,3 +66,13 @@ public class OCP {
             process.processorPayment(new UpiPayment());
         }
 }
+
+
+/*
+| Question           | Answer                                                                      |
+| ------------------ | --------------------------------------------------------------------------- |
+| What is OCP?       | Code should allow behavior to be extended without modifying existing logic. |
+| Why?               | To reduce bugs and avoid breaking old code.                                 |
+| How to achieve it? | Use inheritance, interfaces, or polymorphism.                               |
+
+ */
